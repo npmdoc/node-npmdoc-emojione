@@ -1,0 +1,933 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="http://www.emojione.com"
+
+    >emojione (v2.2.7)</a>
+</h1>
+<h4>Emoji One is a complete set of emojis designed for the web. It includes libraries to easily convert unicode characters to shortnames (:smile:) and shortnames to our custom emoji images. PNG and SVG formats provided for the emoji images.</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.emojione">module emojione</a><ol>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">emojione.</span>ascii</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">emojione.</span>imageTitleTag</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">emojione.</span>sprites</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">boolean <span class="apidocSignatureSpan">emojione.</span>unicodeAlt</span>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.convert">
+            function <span class="apidocSignatureSpan">emojione.</span>convert
+            <span class="apidocSignatureSpan">(unicode)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.escapeHTML">
+            function <span class="apidocSignatureSpan">emojione.</span>escapeHTML
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.escapeRegExp">
+            function <span class="apidocSignatureSpan">emojione.</span>escapeRegExp
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.getUnicodeReplacementRegEx">
+            function <span class="apidocSignatureSpan">emojione.</span>getUnicodeReplacementRegEx
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.mapEmojioneList">
+            function <span class="apidocSignatureSpan">emojione.</span>mapEmojioneList
+            <span class="apidocSignatureSpan">(addToMapStorage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.mapUnicodeCharactersToShort">
+            function <span class="apidocSignatureSpan">emojione.</span>mapUnicodeCharactersToShort
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.mapUnicodeToShort">
+            function <span class="apidocSignatureSpan">emojione.</span>mapUnicodeToShort
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.memoizeReplacement">
+            function <span class="apidocSignatureSpan">emojione.</span>memoizeReplacement
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.objectFlip">
+            function <span class="apidocSignatureSpan">emojione.</span>objectFlip
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.replaceAll">
+            function <span class="apidocSignatureSpan">emojione.</span>replaceAll
+            <span class="apidocSignatureSpan">(string, find, replacementList)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.shortnameToAscii">
+            function <span class="apidocSignatureSpan">emojione.</span>shortnameToAscii
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.shortnameToImage">
+            function <span class="apidocSignatureSpan">emojione.</span>shortnameToImage
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.shortnameToUnicode">
+            function <span class="apidocSignatureSpan">emojione.</span>shortnameToUnicode
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.toImage">
+            function <span class="apidocSignatureSpan">emojione.</span>toImage
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.toShort">
+            function <span class="apidocSignatureSpan">emojione.</span>toShort
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.unescapeHTML">
+            function <span class="apidocSignatureSpan">emojione.</span>unescapeHTML
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.unicodeToImage">
+            function <span class="apidocSignatureSpan">emojione.</span>unicodeToImage
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.emojione.unifyUnicode">
+            function <span class="apidocSignatureSpan">emojione.</span>unifyUnicode
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">emojione.</span>asciiList</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">emojione.</span>emojioneList</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">emojione.</span>jsEscapeMap</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">emojione.</span>regAscii</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">emojione.</span>regShortNames</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">emojione.</span>regUnicode</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">emojione.</span>asciiRegexp</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">emojione.</span>cacheBustParam</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">emojione.</span>imagePathPNG</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">emojione.</span>imagePathSVG</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">emojione.</span>imagePathSVGSprites</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">emojione.</span>imageType</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">emojione.</span>shortnames</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">emojione.</span>unicodeRegexp</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.emojione" id="apidoc.module.emojione">module emojione</a></h1>
+
+
+
+
+
+
+
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.convert" id="apidoc.element.emojione.convert">
+        function <span class="apidocSignatureSpan">emojione.</span>convert
+        <span class="apidocSignatureSpan">(unicode)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">convert = function (unicode) {
+    if(unicode.indexOf(&#x22;-&#x22;) &#x3e; -1) {
+        var parts = [];
+        var s = unicode.split(&#x27;-&#x27;);
+        for(var i = 0; i &#x3c; s.length; i++) {
+            var part = parseInt(s[i], 16);
+            if (part &#x3e;= 0x10000 &#x26;&#x26; part &#x3c;= 0x10FFFF) {
+                var hi = Math.floor((part - 0x10000) / 0x400) + 0xD800;
+                var lo = ((part - 0x10000) % 0x400) + 0xDC00;
+                part = (String.fromCharCode(hi) + String.fromCharCode(lo));
+            }
+            else {
+                part = String.fromCharCode(part);
+            }
+            parts.push(part);
+        }
+        return parts.join(&#x27;&#x27;);
+    }
+    else {
+        var s = parseInt(unicode, 16);
+        if (s &#x3e;= 0x10000 &#x26;&#x26; s &#x3c;= 0x10FFFF) {
+            var hi = Math.floor((s - 0x10000) / 0x400) + 0xD800;
+            var lo = ((s - 0x10000) % 0x400) + 0xDC00;
+            return (String.fromCharCode(hi) + String.fromCharCode(lo));
+        }
+        else {
+            return String.fromCharCode(s);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.escapeHTML" id="apidoc.element.emojione.escapeHTML">
+        function <span class="apidocSignatureSpan">emojione.</span>escapeHTML
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeHTML = function (string) {
+    var escaped = {
+        &#x27;&#x26;&#x27; : &#x27;&#x26;amp;&#x27;,
+        &#x27;&#x3c;&#x27; : &#x27;&#x26;lt;&#x27;,
+        &#x27;&#x3e;&#x27; : &#x27;&#x26;gt;&#x27;,
+        &#x27;&#x22;&#x27; : &#x27;&#x26;quot;&#x27;,
+        &#x27;\&#x27;&#x27;: &#x27;&#x26;#039;&#x27;
+    };
+
+    return string.replace(/[&#x26;&#x3c;&#x3e;&#x22;&#x27;]/g, function (match) {
+        return escaped[match];
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.escapeRegExp" id="apidoc.element.emojione.escapeRegExp">
+        function <span class="apidocSignatureSpan">emojione.</span>escapeRegExp
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">escapeRegExp = function (string) {
+    return string.replace(/[-[\]{}()*+?.,;:&#x26;\\^$#\s]/g, &#x22;\\$&#x26;&#x22;);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.getUnicodeReplacementRegEx" id="apidoc.element.emojione.getUnicodeReplacementRegEx">
+        function <span class="apidocSignatureSpan">emojione.</span>getUnicodeReplacementRegEx
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getUnicodeReplacementRegEx = function () {
+    ns.memoizeReplacement();
+    return ns.unicodeReplacementRegEx;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.mapEmojioneList" id="apidoc.element.emojione.mapEmojioneList">
+        function <span class="apidocSignatureSpan">emojione.</span>mapEmojioneList
+        <span class="apidocSignatureSpan">(addToMapStorage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mapEmojioneList = function (addToMapStorage) {
+    for (var shortname in ns.emojioneList) {
+        if (!ns.emojioneList.hasOwnProperty(shortname)) { continue; }
+        for (var i = 0, len = ns.emojioneList[shortname].unicode.length; i &#x3c; len; i++) {
+            var unicode = ns.emojioneList[shortname].unicode[i];
+            addToMapStorage(unicode, shortname);
+        }
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.mapUnicodeCharactersToShort" id="apidoc.element.emojione.mapUnicodeCharactersToShort">
+        function <span class="apidocSignatureSpan">emojione.</span>mapUnicodeCharactersToShort
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mapUnicodeCharactersToShort = function () {
+    ns.memoizeReplacement();
+    return ns.memMapShortToUnicodeCharacters;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.mapUnicodeToShort" id="apidoc.element.emojione.mapUnicodeToShort">
+        function <span class="apidocSignatureSpan">emojione.</span>mapUnicodeToShort
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mapUnicodeToShort = function () {
+    if (!ns.memMapShortToUnicode) {
+        ns.memMapShortToUnicode = {};
+        ns.mapEmojioneList(function (unicode, shortname) {
+            ns.memMapShortToUnicode[unicode] = shortname;
+        });
+    }
+    return ns.memMapShortToUnicode;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.memoizeReplacement" id="apidoc.element.emojione.memoizeReplacement">
+        function <span class="apidocSignatureSpan">emojione.</span>memoizeReplacement
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">memoizeReplacement = function () {
+    if (!ns.unicodeReplacementRegEx || !ns.memMapShortToUnicodeCharacters) {
+        var unicodeList = [];
+        ns.memMapShortToUnicodeCharacters = {};
+        ns.mapEmojioneList(function (unicode, shortname) {
+            var emojiCharacter = ns.convert(unicode);
+            if(ns.emojioneList[shortname].isCanonical) {
+                ns.memMapShortToUnicodeCharacters[emojiCharacter] = shortname;
+            }
+            unicodeList.push(emojiCharacter);
+        });
+        ns.unicodeReplacementRegEx = unicodeList.join(&#x27;|&#x27;);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.objectFlip" id="apidoc.element.emojione.objectFlip">
+        function <span class="apidocSignatureSpan">emojione.</span>objectFlip
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">objectFlip = function (obj) {
+    var key, tmp_obj = {};
+
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) {
+            tmp_obj[obj[key]] = key;
+        }
+    }
+
+    return tmp_obj;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.replaceAll" id="apidoc.element.emojione.replaceAll">
+        function <span class="apidocSignatureSpan">emojione.</span>replaceAll
+        <span class="apidocSignatureSpan">(string, find, replacementList)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">replaceAll = function (string, find, replacementList) {
+    var escapedFind = ns.escapeRegExp(find);
+    var search = new RegExp(&#x22;&#x3c;object[^&#x3e;]*&#x3e;.*?&#x3c;\/object&#x3e;|&#x3c;span[^&#x3e;]*&#x3e;.*?&#x3c;\/span&#x3e;|&#x3c;(?:object|embed|svg|img|div|span|p|a)[^&#x3e;]*&#x3e;|(&#x22;+escapedFind
++&#x22;)&#x22;, &#x22;gi&#x22;);
+
+    // callback prevents replacing anything inside of these common html tags as well as between an &#x3c;object&#x3e;&#x3c;/object&#x3e; tag
+    var replace = function(entire, m1) {
+        return ((typeof m1 === &#x27;undefined&#x27;) || (m1 === &#x27;&#x27;)) ? entire : replacementList[m1];
+    };
+
+    return string.replace(search,replace);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.shortnameToAscii" id="apidoc.element.emojione.shortnameToAscii">
+        function <span class="apidocSignatureSpan">emojione.</span>shortnameToAscii
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shortnameToAscii = function (str) {
+    var unicode,
+    // something to keep in mind here is that array flip will destroy
+    // half of the ascii text &#x22;emojis&#x22; because the unicode numbers are duplicated
+    // this is ok for what it&#x27;s being used for
+        unicodeToAscii = ns.objectFlip(ns.asciiList);
+
+    str = str.replace(ns.regShortNames, function(shortname) {
+        if( (typeof shortname === &#x27;undefined&#x27;) || (shortname === &#x27;&#x27;) || (!(shortname in ns.emojioneList)) ) {
+            // if the shortname doesnt exist just return the entire match
+            return shortname;
+        }
+        else {
+            unicode = ns.emojioneList[shortname].unicode[ns.emojioneList[shortname].unicode.length-1];
+            if(typeof unicodeToAscii[unicode] !== &#x27;undefined&#x27;) {
+                return unicodeToAscii[unicode];
+            } else {
+                return shortname;
+            }
+        }
+    });
+    return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.shortnameToImage" id="apidoc.element.emojione.shortnameToImage">
+        function <span class="apidocSignatureSpan">emojione.</span>shortnameToImage
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shortnameToImage = function (str) {
+    // replace regular shortnames first
+    var replaceWith,unicode,alt,title;
+    str = str.replace(ns.regShortNames, function(shortname) {
+        if( (typeof shortname === &#x27;undefined&#x27;) || (shortname === &#x27;&#x27;) || (!(shortname in ns.emojioneList)) ) {
+            // if the shortname doesnt exist just return the entire match
+            return shortname;
+        }
+        else {
+            unicode = ns.emojioneList[shortname].unicode[ns.emojioneList[shortname].unicode.length-1];
+            title = ns.imageTitleTag ? &#x27;title=&#x22;&#x27;+shortname+&#x27;&#x22;&#x27; : &#x27;&#x27;;
+
+            // depending on the settings, we&#x27;ll either add the native unicode as the alt tag, otherwise the shortname
+            alt = (ns.unicodeAlt) ? ns.convert(unicode.toUpperCase()) : shortname;
+
+            if(ns.imageType === &#x27;png&#x27;) {
+                if(ns.sprites) {
+                    replaceWith = &#x27;&#x3c;span class=&#x22;emojione emojione-&#x27;+unicode+&#x27;&#x22; &#x27; + title + &#x27;&#x3e;&#x27;+alt+&#x27;&#x3c;/span&#x3e;&#x27;;
+                }
+                else {
+                    replaceWith = &#x27;&#x3c;img class=&#x22;emojione&#x22; alt=&#x22;&#x27;+alt+&#x27;&#x22; &#x27; + title + &#x27; src=&#x22;&#x27;+ns.imagePathPNG+unicode+&#x27;.png&#x27;+ns.cacheBustParam
++&#x27;&#x22;/&#x3e;&#x27;;
+                }
+            }
+            else {
+                // svg
+                if(ns.sprites) {
+                    replaceWith = &#x27;&#x3c;svg class=&#x22;emojione&#x22;&#x3e;&#x3c;description&#x3e;&#x27;+alt+&#x27;&#x3c;/description&#x3e;&#x3c;use xlink:href=&#x22;&#x27;+ns.imagePathSVGSprites
++&#x27;#emoji-&#x27;+unicode+&#x27;&#x22;&#x3e;&#x3c;/use&#x3e;&#x3c;/svg&#x3e;&#x27;;
+                }
+                else {
+                    replaceWith = &#x27;&#x3c;object class=&#x22;emojione&#x22; data=&#x22;&#x27;+ns.imagePathSVG+unicode+&#x27;.svg&#x27;+ns.cacheBustParam+&#x27;&#x22; type=&#x22;image
+/svg+xml&#x22; standby=&#x22;&#x27;+alt+&#x27;&#x22;&#x3e;&#x27;+alt+&#x27;&#x3c;/object&#x3e;&#x27;;
+                }
+            }
+
+            return replaceWith;
+        }
+    });
+
+    // if ascii smileys are turned on, then we&#x27;ll replace them!
+    if (ns.ascii) {
+
+        str = str.replace(ns.regAscii, function(entire, m1, m2, m3) {
+            if( (typeof m3 === &#x27;undefined&#x27;) || (m3 === &#x27;&#x27;) || (!(ns.unescapeHTML(m3) in ns.asciiList)) ) {
+                // if the ascii doesnt exist just return the entire match
+                return entire;
+            }
+
+            m3 = ns.unescapeHTML(m3);
+            unicode = ns.asciiList[m3];
+            title = ns.imageTitleTag ? &#x27;title=&#x22;&#x27;+ns.escapeHTML(m3)+&#x27;&#x22;&#x27; : &#x27;&#x27;;
+
+            // depending on the settings, we&#x27;ll either add the native unicode as the alt tag, otherwise the shortname
+            alt = (ns.unicodeAlt) ? ns.convert(unicode.toUpperCase()) : ns.escapeHTML(m3);
+
+            if(ns.imageType === &#x27;png&#x27;) {
+                if(ns.sprites) {
+                    replaceWith = m2+&#x27;&#x3c;span class=&#x22;emojione emojione-&#x27;+unicode+&#x27;&#x22;  &#x27; + title + &#x27;&#x3e;&#x27;+alt+&#x27;&#x3c;/span&#x3e;&#x27;;
+                }
+                else {
+                    replaceWith = m2+&#x27;&#x3c;img class=&#x22;emojione&#x22; alt=&#x22;&#x27;+alt+&#x27;&#x22; &#x27; + title + &#x27; src=&#x22;&#x27;+ns.imagePathPNG+unicode+&#x27;.png&#x27;+ns
+.cacheBustParam+&#x27;&#x22;/&#x3e;&#x27;;
+                }
+            }
+            else {
+                // svg
+                if(ns.sprites) {
+                    replaceWith = &#x27;&#x3c;svg class=&#x22;emojione&#x22;&#x3e;&#x3c;description&#x3e;&#x27;+alt+&#x27;&#x3c;/description&#x3e;&#x3c;use xlink:href=&#x22;&#x27;+ns.imagePathSVGSprites
++&#x27;#emoji-&#x27;+unicode+&#x27;&#x22;&#x3e;&#x3c;/use&#x3e;&#x3c;/svg&#x3e;&#x27;;
+                }
+                else {
+                    replaceWith = m2+&#x27;&#x3c;object class=&#x22;emojione&#x22; data=&#x22;&#x27;+ns.imagePathSVG+unicode+&#x27;.svg&#x27;+ns.cacheBustParam+&#x27;&#x22; type=&#x22;
+image/svg+xml&#x22; standby=&#x22;&#x27;+alt+&#x27;&#x22;&#x3e;&#x27;+alt+&#x27;&#x3c;/object&#x3e;&#x27;;
+                }
+            }
+
+            return replaceWith;
+        });
+    }
+
+    return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.shortnameToUnicode" id="apidoc.element.emojione.shortnameToUnicode">
+        function <span class="apidocSignatureSpan">emojione.</span>shortnameToUnicode
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">shortnameToUnicode = function (str) {
+    // replace regular shortnames first
+    var unicode,fname,uc;
+    str = str.replace(ns.regShortNames, function(shortname) {
+        if( (typeof shortname === &#x27;undefined&#x27;) || (shortname === &#x27;&#x27;) || (!(shortname in ns.emojioneList)) ) {
+            // if the shortname doesnt exist just return the entire match
+            return shortname;
+        }
+        unicode = ns.emojioneList[shortname].unicode[0].toUpperCase();
+        fname = ns.emojioneList[shortname].fname;
+        uc = ns.emojioneList[shortname].uc;
+        //return ns.convert(unicode);
+        return ns.convert(uc);
+    });
+
+    // if ascii smileys are turned on, then we&#x27;ll replace them!
+    if (ns.ascii) {
+
+        str = str.replace(ns.regAscii, function(entire, m1, m2, m3) {
+            if( (typeof m3 === &#x27;undefined&#x27;) || (m3 === &#x27;&#x27;) || (!(ns.unescapeHTML(m3) in ns.asciiList)) ) {
+                // if the shortname doesnt exist just return the entire match
+                return entire;
+            }
+
+            m3 = ns.unescapeHTML(m3);
+            unicode = ns.asciiList[m3].toUpperCase();
+            return m2+ns.convert(unicode);
+        });
+    }
+
+    return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.toImage" id="apidoc.element.emojione.toImage">
+        function <span class="apidocSignatureSpan">emojione.</span>toImage
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toImage = function (str) {
+    str = ns.unicodeToImage(str);
+    str = ns.shortnameToImage(str);
+    return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.toShort" id="apidoc.element.emojione.toShort">
+        function <span class="apidocSignatureSpan">emojione.</span>toShort
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toShort = function (str) {
+    var find = ns.getUnicodeReplacementRegEx(),
+        replacementList = ns.mapUnicodeCharactersToShort();
+    return  ns.replaceAll(str, find,replacementList);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.unescapeHTML" id="apidoc.element.emojione.unescapeHTML">
+        function <span class="apidocSignatureSpan">emojione.</span>unescapeHTML
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unescapeHTML = function (string) {
+    var unescaped = {
+        &#x27;&#x26;amp;&#x27;  : &#x27;&#x26;&#x27;,
+        &#x27;&#x26;#38;&#x27;  : &#x27;&#x26;&#x27;,
+        &#x27;&#x26;#x26;&#x27; : &#x27;&#x26;&#x27;,
+        &#x27;&#x26;lt;&#x27;   : &#x27;&#x3c;&#x27;,
+        &#x27;&#x26;#60;&#x27;  : &#x27;&#x3c;&#x27;,
+        &#x27;&#x26;#x3C;&#x27; : &#x27;&#x3c;&#x27;,
+        &#x27;&#x26;gt;&#x27;   : &#x27;&#x3e;&#x27;,
+        &#x27;&#x26;#62;&#x27;  : &#x27;&#x3e;&#x27;,
+        &#x27;&#x26;#x3E;&#x27; : &#x27;&#x3e;&#x27;,
+        &#x27;&#x26;quot;&#x27; : &#x27;&#x22;&#x27;,
+        &#x27;&#x26;#34;&#x27;  : &#x27;&#x22;&#x27;,
+        &#x27;&#x26;#x22;&#x27; : &#x27;&#x22;&#x27;,
+        &#x27;&#x26;apos;&#x27; : &#x27;\&#x27;&#x27;,
+        &#x27;&#x26;#39;&#x27;  : &#x27;\&#x27;&#x27;,
+        &#x27;&#x26;#x27;&#x27; : &#x27;\&#x27;&#x27;
+    };
+
+    return string.replace(/&#x26;(?:amp|#38|#x26|lt|#60|#x3C|gt|#62|#x3E|apos|#39|#x27|quot|#34|#x22);/ig, function (match) {
+        return unescaped[match];
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.unicodeToImage" id="apidoc.element.emojione.unicodeToImage">
+        function <span class="apidocSignatureSpan">emojione.</span>unicodeToImage
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unicodeToImage = function (str) {
+
+    var replaceWith,unicode,short,fname,alt,title;
+    var mappedUnicode = ns.mapUnicodeToShort();
+    str = str.replace(ns.regUnicode, function(unicodeChar) {
+        if( (typeof unicodeChar === &#x27;undefined&#x27;) || (unicodeChar === &#x27;&#x27;) || (!(unicodeChar in ns.jsEscapeMap)) ) {
+            // if the unicodeChar doesnt exist just return the entire match
+            return unicodeChar;
+        }
+        else {
+            // get the unicode codepoint from the actual char
+            unicode = ns.jsEscapeMap[unicodeChar];
+
+            //then map to shortname and locate the filename
+            short = mappedUnicode[unicode];
+            fname = ns.emojioneList[short].fname;
+
+            // depending on the settings, we&#x27;ll either add the native unicode as the alt tag, otherwise the shortname
+            alt = (ns.unicodeAlt) ? ns.convert(unicode.toUpperCase()) : short;
+            title = ns.imageTitleTag ? &#x27;title=&#x22;&#x27;+short+&#x27;&#x22;&#x27; : &#x27;&#x27;;
+
+            if(ns.imageType === &#x27;png&#x27;) {
+                if(ns.sprites) {
+                    replaceWith = &#x27;&#x3c;span class=&#x22;emojione emojione-&#x27;+unicode+&#x27;&#x22; &#x27; + title + &#x27;&#x3e;&#x27;+alt+&#x27;&#x3c;/span&#x3e;&#x27;;
+                }
+                else {
+                    replaceWith = &#x27;&#x3c;img class=&#x22;emojione&#x22; alt=&#x22;&#x27;+alt+&#x27;&#x22; &#x27; + title + &#x27; src=&#x22;&#x27;+ns.imagePathPNG+fname+&#x27;.png&#x27;+ns.cacheBustParam
++&#x27;&#x22;/&#x3e;&#x27;;
+                }
+            }
+            else {
+                // svg
+                if(ns.sprites) {
+                    replaceWith = &#x27;&#x3c;svg class=&#x22;emojione&#x22;&#x3e;&#x3c;description&#x3e;&#x27;+alt+&#x27;&#x3c;/description&#x3e;&#x3c;use xlink:href=&#x22;&#x27;+ns.imagePathSVGSprites
++&#x27;#emoji-&#x27;+unicode+&#x27;&#x22;&#x3e;&#x3c;/use&#x3e;&#x3c;/svg&#x3e;&#x27;;
+                }
+                else {
+                    replaceWith = &#x27;&#x3c;img class=&#x22;emojione&#x22; alt=&#x22;&#x27;+alt+&#x27;&#x22; &#x27; + title + &#x27; src=&#x22;&#x27;+ns.imagePathSVG+fname+&#x27;.svg&#x27;+ns.cacheBustParam
++&#x27;&#x22;/&#x3e;&#x27;;
+                }
+            }
+
+            return replaceWith;
+        }
+    });
+
+    return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.emojione.unifyUnicode" id="apidoc.element.emojione.unifyUnicode">
+        function <span class="apidocSignatureSpan">emojione.</span>unifyUnicode
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unifyUnicode = function (str) {
+    str = ns.toShort(str);
+    str = ns.shortnameToUnicode(str);
+    return str;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
